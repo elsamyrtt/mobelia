@@ -1,5 +1,6 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "../styles/page.module.css";
+import Button from "../components/button";
 
 export default function Home() {
   return (
@@ -51,6 +52,7 @@ export default function Home() {
             />
             Deploy Now
           </a>
+          <Button text={"Boton 1 y unico x"}></Button>
           <a
             className={styles.secondary}
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"

@@ -1,0 +1,43 @@
+:root{
+    --font-size: 120%;
+    --text-color: #ebebeb;
+    --border-radius-button: 1.6rem;
+    --padding-button: 0 16px;
+    --border-color-button: #ebebeb;
+}
+
+/*Button*/
+
+@keyframes scale{
+    50%{ transform: scale(1.01);}
+    100%{ transform: scale(1); backdrop-filter: blur(10px);}
+}
+
+.button {
+    background-color: #00000000;
+    backdrop-filter: blur(5px);
+    border-radius: var(--border-radius-button);
+    padding: var(--padding-button);
+    border: none;
+    outline: none;
+    align-items: center;
+    justify-items: center;
+}
+
+.button:hover{
+    animation: scale 0.5s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color-button);
+}
+
+.text {
+    color: var(--text-color);
+    font-family: var(--font-stack-sans);
+    font-size: var(--font-size);
+}
+
+/*Product*/
+
+.product{
+
+}
