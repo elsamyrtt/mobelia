@@ -15,7 +15,7 @@ export default function Card({ alt, src_image, title, description, link, price }
                 <strong>${price}</strong>
                 <Link href={link}>Ver Producto</Link>
             </div>
-            <div>
+            <div>   
                 <Button text="Agregar al carrito">
                     <Image
                         alt="Imagen de agregar al carrito el producto"
