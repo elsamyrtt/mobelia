@@ -1,0 +1,8 @@
+[[seatings]]
+[[tables]]
+[[storage]]
+[[bedroom]]
+[[office]]
+[[outdoor]]
+[[display]]
+[[accents]]

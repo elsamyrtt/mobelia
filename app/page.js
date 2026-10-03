@@ -4,16 +4,17 @@ import Categories from "@/components/Categories";
 import Hero from "@/components/Hero";
 import About from "@/components/About"
 import Process from "@/components/Process";
+import Calculator from "@/components/Calculator";
 
 export default function Home() {
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <Categories/>
-    <About/>
-    {/* 1-SEO 2-Tailwind*/}
-    <Process/>
+      <Navbar />
+      <Hero />
+      <Categories />
+      <About />
+      <Process />
+      <Calculator />
     </>
   );
 }
