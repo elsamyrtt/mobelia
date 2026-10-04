@@ -1,9 +1,50 @@
-:root{
+@import "tailwindcss";
+
+@theme {
+    --color-carbon-black: #242424;
+    --color-wisteria-blue: #89a6ff;
+    --color-ghost-white: #f7f9ff;
+    --color-jasmine: #ffde8a;
+    --color-white: #ffffff;
+    --color-border: var(--color-ghost-white);
+    --color-border-strong: var(--color-carbon-black);
+    --color-border-accent: var(--color-wisteria-blue);
+
+    --spacing-0: 0;
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-10: 2.5rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+    --spacing-20: 5rem;
+    --spacing-24: 6rem;
+    --spacing-page: var(--spacing-6);
+    --spacing-section: var(--spacing-16);
+    --spacing-card: var(--spacing-6);
+    --spacing-control-x: var(--spacing-4);
+    --spacing-control-y: var(--spacing-3);
+    --spacing-heading: var(--spacing-4);
+
+    --radius-none: 0;
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-button: 1.6rem;
+    --radius-full: 9999px;
+}
+
+:root {
     --font-size: 120%;
-    --text-color: #ebebeb;
-    --border-radius-button: 1.6rem;
-    --padding-button: 0 16px;
-    --border-color-button: #ebebeb;
+    --text-color: var(--color-carbon-black);
+    --border-radius-button: var(--radius-button);
+    --padding-button: 0 var(--spacing-control-x);
+    --border-color-button: var(--color-white);
 }
 
 /*Button*/

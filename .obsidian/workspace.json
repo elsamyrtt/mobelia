@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "b92e8b8a6951c1db",
+    "id": "bad0889861cd42b3",
     "type": "split",
     "children": [
       {
-        "id": "9da78a67fa73bf3a",
+        "id": "809d68621978f4b7",
         "type": "tabs",
         "children": [
           {
-            "id": "a1558cf0f71b796c",
+            "id": "3ff5a0911bd61bec",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Catálogo de productos.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Catálogo de productos"
+              "title": "Nueva pestaña"
             }
           }
         ]
@@ -27,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "b821d033140ad73f",
+    "id": "ef5b584266a50c67",
     "type": "split",
     "children": [
       {
-        "id": "205f455ad9fc8c5b",
+        "id": "bff9d37dd9c93c60",
         "type": "tabs",
         "children": [
           {
-            "id": "8248026f257c72b5",
+            "id": "c31cd46686551e41",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -50,7 +46,7 @@
             }
           },
           {
-            "id": "69c044a37d6a8e26",
+            "id": "82d945a05be53bc6",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -67,7 +63,7 @@
             }
           },
           {
-            "id": "48520982d3b93daf",
+            "id": "4ec51c7efebb8170",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -86,15 +82,15 @@
     "width": 300
   },
   "right": {
-    "id": "1b7f47f9bbdd4704",
+    "id": "d73b2e5381137c82",
     "type": "split",
     "children": [
       {
-        "id": "78118c42756ed619",
+        "id": "4105b89c9c27c1f4",
         "type": "tabs",
         "children": [
           {
-            "id": "dbfd7096d810d590",
+            "id": "8b8fa2b4f718a8cf",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -112,7 +108,7 @@
             }
           },
           {
-            "id": "0765f211591d42cd",
+            "id": "a6688b7b8becb612",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -125,7 +121,7 @@
             }
           },
           {
-            "id": "7703efa1cff21303",
+            "id": "9121e730979a2f08",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -140,7 +136,7 @@
             }
           },
           {
-            "id": "8660f1709ee05b05",
+            "id": "425388ed7f37085d",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -154,7 +150,7 @@
             }
           },
           {
-            "id": "c54ae8c74169445f",
+            "id": "ed6876dae69988d1",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -185,38 +181,6 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "a1558cf0f71b796c",
-  "lastOpenFiles": [
-    "SEO.md",
-    "Clientes y cuentas.md",
-    "Decisiones de arquitectura.md",
-    "Base de datos.md",
-    "Pagos y envíos.md",
-    "products.md",
-    "Catálogo de productos.md",
-    "Integraciones.md",
-    "Operación y despliegue.md",
-    "Seguridad y privacidad.md",
-    "Inventario.md",
-    "Pedidos y cotizaciones.md",
-    "Esquema de datos.md",
-    "Arquitectura.md",
-    "Inicio.md",
-    "Tablas.md",
-    "tables.md",
-    "types_furniture.md",
-    "types_fabric.md",
-    "seatings.md",
-    "accents.md",
-    "bedroom.md",
-    "display.md",
-    "office.md",
-    "outdoor.md",
-    "storage.md",
-    "types_fabric.canvas",
-    "Base de datos.canvas",
-    "types_furniture.canvas",
-    "office.canvas",
-    "Sin título.base"
-  ]
+  "active": "3ff5a0911bd61bec",
+  "lastOpenFiles": []
 }
