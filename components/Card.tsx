@@ -19,8 +19,8 @@ const currency = new Intl.NumberFormat("es-CO", {
 
 export default function Card({ alt, src_image, title, description, link, price }: CardProps) {
     return (
-        <article>
-            <Image alt={alt} src={src_image} />
+        <article className="flex flex-col gap-2 p-4 shadow-2xl w-64">
+            <Image alt={alt} src={src_image} width={200} className="w-full h-auto" />
             <h3>{title}</h3>
             <p>{description}</p>
             <p>
