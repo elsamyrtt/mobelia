@@ -2,6 +2,7 @@ import Product, { type ProductCategory } from "@/models/Product";
 
 type ProductSelectorProps = {
     id: string;
+    className?: string;
     value: Product | null;
     onChange: (value: Product | null) => void;
 };
@@ -26,10 +27,11 @@ export const products = productOptions.map(({ name, category }) =>
     }),
 );
 
-export default function ProductSelector({ id, value, onChange }: ProductSelectorProps) {
+export default function ProductSelector({ id, className, value, onChange }: ProductSelectorProps) {
     return (
         <select
             id={id}
+            className={className}
             value={value?.id ?? ""}
             onChange={(event) => {
                 const selectedId = event.currentTarget.value;

@@ -2,22 +2,22 @@
 
 ## Estado
 
-La web actualmente implementa solo la portada (`/`). No hay páginas de categoría/producto, búsqueda, sitemap de URLs comerciales, dominio público documentado ni contenido de productos definitivo. El metadata actual describe muebles para hogares, hoteles y restaurantes basándose en el contenido y notas de Mobelia.
+La web actualmente implementa solo la portada (`/`). No hay páginas de categoría/producto, búsqueda, sitemap de URLs comerciales ni contenido de productos definitivo. El metadata actual describe muebles para hogares, hoteles y restaurantes basándose en el contenido y notas de Mobelia.
 
 Técnico implementado en Next.js:
 
 - `app/layout.tsx`: idioma español, title/description, Open Graph y Twitter.
 - `app/page.tsx`: canonical de la portada y URL social cuando existe el dominio configurado; JSON-LD `Organization`/`WebSite` con nombre e Instagram confirmados.
-- `app/robots.ts`: permite rastreo público e incluye el sitemap solo si `SITE_URL` está configurado.
-- `app/sitemap.xml/route.ts`: sitemap dinámico con las rutas indexables implementadas (por ahora, `/`); responde HTTP 503 con instrucciones si falta `SITE_URL`.
-- `SITE_URL`: origen HTTPS canónico, debe estar definido tanto al construir como al ejecutar en producción.
-- `SEO_INDEXING_ENABLED=true`: habilitar solo para el dominio de producción ya confirmado. Si falta, la portada lleva `noindex,follow` y el sitemap no se anuncia.
+- `app/robots.ts`: permite rastreo público e incluye el sitemap si `SITE_URL` está configurado y la indexación está habilitada.
+- `app/sitemap.xml/route.ts`: sitemap dinámico con las rutas indexables implementadas (por ahora, `/`); responde HTTP 503 con instrucciones si falta `SITE_URL` o la indexación no está habilitada.
+- `.env.production`: configura `SITE_URL=https://mobeliastudio.com` y `SEO_INDEXING_ENABLED=true` para producción. Contiene solo configuración pública y se incluye en el repositorio para que Next.js la cargue al construir y ejecutar.
+- El hosting puede sobrescribir esas variables; confirmar que conserva el dominio canónico `https://mobeliastudio.com` y `SEO_INDEXING_ENABLED=true`. Si falta la URL o el indicador no es `true`, la portada lleva `noindex,follow` y el sitemap no se anuncia.
 
-Todavía no están configurados/verificados: dominio canonical, Search Console/Bing Webmaster Tools, analítica/consentimiento, imagen social real, favicon final ni datos de negocio local confirmados.
+Todavía deben verificarse: DNS/TLS del dominio canónico, Search Console/Bing Webmaster Tools, analítica/consentimiento, imagen social real, favicon final y datos de negocio local.
 
 ## Antes de publicar
 
-1. Confirmar dominio y variante canónica (con/sin `www`), configurar DNS/TLS y `SITE_URL` en build + runtime; establecer `SEO_INDEXING_ENABLED=true` solo para ese entorno.
+1. Configurar DNS/TLS para `mobeliastudio.com` y comprobar en build + runtime que el hosting no sobrescriba `SITE_URL=https://mobeliastudio.com` ni `SEO_INDEXING_ENABLED=true`.
 2. Verificar que `/`, `/robots.txt` y `/sitemap.xml` respondan en el dominio canónico; canonical y sitemap deben usar exactamente esa variante HTTPS.
 3. Enviar sitemap a Google Search Console y Bing Webmaster Tools; inspeccionar la portada, renderizado, canonical elegida y cobertura.
 4. Sustituir productos, descripciones, precios, materiales e imágenes de demostración por información aprobada. No indexar fichas sin contenido útil/disponibilidad verificada.

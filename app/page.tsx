@@ -1,10 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Categories from "@/components/Categories";
 import Hero from "@/components/Hero";
+import Gallery from "@/components/Gallery";
 import About from "@/components/About";
 import Process from "@/components/Process";
 import Calculator from "@/components/Calculator";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import OrganizationJsonLd from "@/components/OrganizationJsonLd";
 import type { Metadata } from "next";
 import { getSiteUrl, homeDescription, homeTitle, siteName } from "@/lib/seo";
@@ -31,29 +33,20 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <header>
+      <header className="sticky top-0 z-50">
         <Navbar />
       </header>
       <main id="contenido-principal">
         <OrganizationJsonLd />
         <Hero />
         <Categories />
+        <Gallery />
         <About />
         <Process />
         <Calculator />
         <Contact />
-        <div className="flex flex-1 flex-row">
-          <div className="bg-[var(--color-ghost-white)] w-16 h16 p-3">1</div>
-          <div className="bg-[var(--color-jasmine)] w-16 h16 p-3">2</div>
-          <div className="bg-[var(--color-carbon-black)] w-16 h16 p-3">3</div>
-          <div className="bg-[var(--color-wisteria-blue)] w-16 h16 p-3">4</div>
-          <div className="bg-[var(--color-ink)] w-16 h16 p-3">5</div>
-          <div className="bg-[var(--color-brass)] w-16 h16 p-3">6</div>
-        </div>
       </main>
-      <footer>
-        <small>Mobelia Studio</small>
-      </footer>
+      <Footer />
     </>
   );
 }

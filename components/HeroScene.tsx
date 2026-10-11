@@ -6,7 +6,6 @@ import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader.js";
-import styles from "@/styles/Hero.module.css";
 
 const MODEL_BASE = "/3d/";
 const MODEL_WIDTH = 3.8;
@@ -90,7 +89,7 @@ export default function HeroScene(): React.JSX.Element {
 
     return (
         <Canvas
-            className={`${styles.webgl} ${ready ? styles.webglReady : ""}`}
+            className={`hero-scene ${ready ? "hero-scene-ready" : ""}`}
             dpr={[1, 1.5]}
             frameloop="always"
             camera={{ fov: 0.4, position: [0, 1.6, 7.4], near: 0.1, far: 40 }}

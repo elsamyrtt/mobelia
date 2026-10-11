@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { getSiteUrl, homeDescription, homeTitle, isIndexingEnabled, siteName } from "@/lib/seo";
+import "../styles/components.css";
 
 const siteUrl = getSiteUrl();
 
@@ -32,11 +34,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="es">
-      <body>
-        {children}
-      </body>
+      <body className="site-body">{children}</body>
     </html>
   );
 }
-import type { ReactNode } from "react";
-import "../styles/components.css";

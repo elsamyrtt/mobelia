@@ -4,33 +4,34 @@ import Logo_svg from "@/public/Logo_svg.svg";
 
 const navigationLinks = [
     { href: "#catalogo", label: "Catálogo" },
+    { href: "#gallery", label: "Trabajos" },
     { href: "#nosotros", label: "Nosotros" },
-    { href: "#testimonios", label: "Clientes" },
     { href: "#contacto", label: "Contacto" }
 ];
 
 export default function Navbar(): React.JSX.Element {
     return (
         <nav
-            className="site-nav sticky top-0 w-full text-white"
+            className="relative w-full bg-carbon-black/95 text-white backdrop-blur-xl"
             aria-label="Navegación principal"
         >
-            <div className="site-nav__inner mx-auto grid h-18 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto grid min-h-[4.5rem] max-w-7xl grid-cols-[auto_1fr] items-center gap-3 px-3 sm:gap-4 sm:px-6 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:px-8">
                 <Link
                     href="/"
                     aria-label="Mobelia Studio, inicio"
-                    className="site-nav__logo rounded-2xl bg-(--color-ghost-white) p-1.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jasmine"
+                    className="group col-start-1 inline-flex min-h-11 min-w-11 items-center justify-center justify-self-start transition-transform duration-300 hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass motion-reduce:transition-none"
                 >
-                    <Image alt="" src={Logo_svg} width={40} height={40} />
+                    <Image className="block size-10" alt="" src={Logo_svg} width={40} height={40} />
                 </Link>
-                <ul className="site-nav__links flex items-center justify-center font-medium">
+                <ul className="col-start-2 row-start-1 flex items-center justify-end gap-[clamp(0.3rem,2.4vw,2rem)] text-[clamp(0.66rem,0.35vw+0.62rem,0.875rem)] font-medium md:col-start-2 md:justify-center">
                     {navigationLinks.map(({ href, label }) => (
                         <li key={href}>
                             <Link
                                 href={href}
-                                className="site-nav__link relative inline-flex whitespace-nowrap py-2 text-white/80 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jasmine"
+                                className="group relative inline-flex min-h-11 items-center whitespace-nowrap px-1 text-white/80 transition-[color,transform] duration-300 hover:-translate-y-0.5 hover:text-brass focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass motion-reduce:transition-none sm:px-2"
                             >
                                 {label}
+                                <span className="absolute inset-x-0 bottom-0 h-0.5 origin-center scale-x-0 rounded-full bg-brass transition-transform duration-300 group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none" />
                             </Link>
                         </li>
                     ))}
