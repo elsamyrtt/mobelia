@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Logo_svg from "@/public/Logo_svg.svg";
+import Logo from "@/public/Logo.png";
 
 const navigationLinks = [
     { href: "#catalogo", label: "Catálogo" },
@@ -15,13 +15,13 @@ export default function Navbar(): React.JSX.Element {
             className="relative w-full bg-carbon-black/95 text-white backdrop-blur-xl"
             aria-label="Navegación principal"
         >
-            <div className="mx-auto grid min-h-[4.5rem] max-w-7xl grid-cols-[auto_1fr] items-center gap-3 px-3 sm:gap-4 sm:px-6 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:px-8">
+            <div className="mx-auto grid min-h-[4.5rem] max-w-7xl grid-cols-[auto_1fr] items-center px-3 sm:gap-4 sm:px-6 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:px-8">
                 <Link
                     href="/"
                     aria-label="Mobelia Studio, inicio"
-                    className="group col-start-1 inline-flex min-h-11 min-w-11 items-center justify-center justify-self-start transition-transform duration-300 hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass motion-reduce:transition-none"
+                    className="inline-flex min-h-18 min-w-18 items-center justify-self-start transition-transform duration-300 hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass motion-reduce:transition-none"
                 >
-                    <Image className="block size-10" alt="" src={Logo_svg} width={40} height={40} />
+                    <Image className="p-0 block size-17 object-cover" alt="" src={Logo} width={720} height={1280} />
                 </Link>
                 <ul className="col-start-2 row-start-1 flex items-center justify-end gap-[clamp(0.3rem,2.4vw,2rem)] text-[clamp(0.66rem,0.35vw+0.62rem,0.875rem)] font-medium md:col-start-2 md:justify-center">
                     {navigationLinks.map(({ href, label }) => (
