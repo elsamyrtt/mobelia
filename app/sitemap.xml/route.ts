@@ -1,4 +1,5 @@
 import { getSiteUrl, isIndexingEnabled } from "@/lib/seo";
+import { catalogueProducts } from "@/lib/catalogue-products";
 
 export const dynamic = "force-dynamic";
 
@@ -14,11 +15,16 @@ export function GET(): Response {
     );
   }
 
-  const homepage = new URL("/", siteUrl).href;
+  const paths = [
+    "/",
+    "/catalogue",
+    "/gallery",
+    ...catalogueProducts.map(({ id }) => `/catalogue/${id}`),
+  ];
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    `  <url><loc>${homepage.replace(/&/g, "&amp;")}</loc></url>`,
+    ...paths.map((path) => `  <url><loc>${new URL(path, siteUrl).href}</loc></url>`),
     "</urlset>",
   ].join("\n");
 

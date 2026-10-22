@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { businessPhoneNational } from "@/lib/business";
+import { buildWhatsAppMessageUrl } from "@/lib/quote-message";
 
 export default function Footer() {
+  const whatsappUrl = buildWhatsAppMessageUrl("Hola Mobelia Studio, quiero información.");
+
   return (
     <footer className="border-t border-white/10 bg-carbon-black px-5 pt-12 pb-7 text-white/75 sm:px-8 sm:pt-16">
       <div className="relative mx-auto max-w-7xl">
@@ -24,10 +28,12 @@ export default function Footer() {
               Explora
             </h2>
             <ul className="mt-4 space-y-1 text-sm font-medium text-white/75 sm:mt-5 sm:space-y-2">
-              <li><Link className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href="#catalogo">Catálogo</Link></li>
-              <li><Link className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href="#nosotros">Nosotros</Link></li>
-              <li><Link className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href="#calculadora">Calculadora</Link></li>
-              <li><Link className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href="#contacto">Contacto</Link></li>
+              <li><Link className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href="/catalogue">Catálogo</Link></li>
+              <li><Link className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href="/gallery">Proyectos</Link></li>
+              <li><Link className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href="/#nosotros">Nosotros</Link></li>
+              <li><Link className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href="/cart">Carrito de cotización</Link></li>
+              <li><Link className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href="/#calculadora">Calculadora</Link></li>
+              <li><Link className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href="/#contacto">Contacto</Link></li>
             </ul>
           </nav>
 
@@ -37,19 +43,19 @@ export default function Footer() {
             </h2>
             <ul className="mt-4 space-y-1 text-sm font-medium text-white/75 sm:mt-5 sm:space-y-2">
               <li>
-                <a className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href="tel:+573043907335">
-                  +57 304 390 7335
+                <a className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass" href={`tel:+57${businessPhoneNational}`}>
+                  +57 {businessPhoneNational}
                 </a>
               </li>
               <li>
-                <a
+                {whatsappUrl && <a
                   className="inline-flex min-h-11 items-center transition-colors duration-200 hover:text-brass"
-                  href="https://wa.me/573043907335?text=Hola%20Mobelia%20Studio,%20quiero%20información."
+                  href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   WhatsApp
-                </a>
+                </a>}
               </li>
               <li>
                 <a

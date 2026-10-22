@@ -1,7 +1,7 @@
 export const siteName = "Mobelia Studio";
-export const homeTitle = "Muebles para hogares, hoteles y restaurantes | Mobelia Studio";
+export const homeTitle = "Diseño de mobiliario en Medellín para hogares y negocios | Mobelia Studio";
 export const homeDescription =
-  "Diseño de muebles para hogares, hoteles y restaurantes. Conoce la propuesta de Mobelia Studio y consulta sobre productos y proyectos a medida.";
+  "Diseño de mobiliario para hogares, hoteles y restaurantes. Conoce Mobelia Studio en Medellín y conversa con nuestro equipo sobre tu proyecto.";
 export const instagramProfile = "https://www.instagram.com/mobeliastudio/";
 export const isIndexingEnabled = process.env.SEO_INDEXING_ENABLED === "true";
 
@@ -26,4 +26,3 @@ export function getSiteUrl(): URL | null {
 
   return siteUrl;
 }
-

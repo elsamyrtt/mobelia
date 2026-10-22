@@ -1,15 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/Logo.png";
+import { useCart } from "@/components/CartProvider";
 
 const navigationLinks = [
-    { href: "#catalogo", label: "Catálogo" },
-    { href: "#gallery", label: "Trabajos" },
-    { href: "#nosotros", label: "Nosotros" },
-    { href: "#contacto", label: "Contacto" }
+    { href: "/catalogue", label: "Catálogo" },
+    { href: "/gallery", label: "Trabajos" },
+    { href: "/#nosotros", label: "Nosotros" },
+    { href: "/#contacto", label: "Contacto" }
 ];
 
 export default function Navbar(): React.JSX.Element {
+    const { itemCount } = useCart();
+
     return (
         <nav
             className="relative w-full bg-carbon-black/95 text-white backdrop-blur-xl"
@@ -36,6 +41,15 @@ export default function Navbar(): React.JSX.Element {
                         </li>
                     ))}
                 </ul>
+                <Link
+                    href="/cart"
+                    className="col-span-2 col-start-1 row-start-2 inline-flex min-h-10 items-center justify-self-end gap-2 rounded-full px-3 text-xs text-white/85 transition-colors hover:text-brass focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brass md:col-span-1 md:col-start-3 md:row-start-1 md:justify-self-end sm:text-sm"
+                    aria-label={`Carrito de cotización: ${itemCount} ${itemCount === 1 ? "unidad" : "unidades"}`}
+                >
+                    <span aria-hidden="true">◫</span>
+                    <span>Carrito</span>
+                    <span className="cart-count" aria-live="polite">{itemCount}</span>
+                </Link>
             </div>
         </nav>
     );

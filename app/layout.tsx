@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { getSiteUrl, homeDescription, homeTitle, isIndexingEnabled, siteName } from "@/lib/seo";
+import { CartProvider } from "@/components/CartProvider";
 import "../styles/components.css";
 
 const siteUrl = getSiteUrl();
@@ -34,7 +35,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="es">
-      <body className="site-body">{children}</body>
+      <body className="site-body">
+        <CartProvider>{children}</CartProvider>
+      </body>
     </html>
   );
 }

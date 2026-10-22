@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Logo_svg from "@/public/Logo_svg.svg";
 import CopyToClipboardButton from "./CopyToClipboardButton";
+import { businessEmail, businessInstagram, businessPhoneNational } from "@/lib/business";
+import { buildWhatsAppMessageUrl } from "@/lib/quote-message";
 
-const phone = "3043907335";
-const whatsappUrl = "https://wa.me/573043907335?text=Hola%20Mobelia%20Studio,%20quiero%20información.";
+const phone = businessPhoneNational;
+const whatsappUrl = buildWhatsAppMessageUrl("Hola Mobelia Studio, quiero información.");
 const openingHours = [
     "Lunes a Viernes: 7:30 a. m. – 8:00 p. m.",
     "Sábados: 9:00 a. m. – 3:00 p. m.",
@@ -38,7 +40,7 @@ export default function Contact() {
                             <address className="mt-6 space-y-5 not-italic">
                                 <p className="m-0">
                                     <span className="block text-xs font-medium uppercase tracking-[0.16em] text-carbon-black/55">Correo</span>
-                                    <a className="mt-1 inline-flex min-h-11 items-center break-all text-carbon-black/80 underline decoration-carbon-black/20 underline-offset-4 hover:decoration-brass" href="mailto:mobeliastudio@gmail.com">mobeliastudio@gmail.com</a>
+                                    <a className="mt-1 inline-flex min-h-11 items-center break-all text-carbon-black/80 underline decoration-carbon-black/20 underline-offset-4 hover:decoration-brass" href={`mailto:${businessEmail}`}>{businessEmail}</a>
                                 </p>
                                 <p className="m-0">
                                     <span className="block text-xs font-medium uppercase tracking-[0.16em] text-carbon-black/55">Teléfono</span>
@@ -48,13 +50,15 @@ export default function Contact() {
                                 </p>
                                 <p className="m-0">
                                     <span className="block text-xs font-medium uppercase tracking-[0.16em] text-carbon-black/55">WhatsApp</span>
-                                    <a className="mt-1 inline-flex min-h-11 items-center text-carbon-black underline decoration-carbon-black/30 underline-offset-4 transition-colors hover:text-[#8a6533] hover:decoration-brass focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                                        Abrir conversación
-                                    </a>
+                                    {whatsappUrl && (
+                                        <a className="mt-1 inline-flex min-h-11 items-center text-carbon-black underline decoration-carbon-black/30 underline-offset-4 transition-colors hover:text-[#8a6533] hover:decoration-brass focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                                            Abrir conversación
+                                        </a>
+                                    )}
                                 </p>
                                 <p className="m-0">
                                     <span className="block text-xs font-medium uppercase tracking-[0.16em] text-carbon-black/55">Instagram</span>
-                                    <a className="mt-1 inline-flex min-h-11 items-center text-carbon-black underline decoration-carbon-black/30 underline-offset-4 transition-colors hover:text-[#8a6533] hover:decoration-brass focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass" href="https://www.instagram.com/mobeliastudio/" target="_blank" rel="noopener noreferrer">
+                                    <a className="mt-1 inline-flex min-h-11 items-center text-carbon-black underline decoration-carbon-black/30 underline-offset-4 transition-colors hover:text-[#8a6533] hover:decoration-brass focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass" href={businessInstagram} target="_blank" rel="noopener noreferrer">
                                         @mobeliastudio
                                     </a>
                                 </p>
@@ -97,13 +101,14 @@ export default function Contact() {
                                 <p className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-carbon-black/55">Encuéntranos</p>
                                 <h3 id="location-title" className="text-2xl font-medium tracking-tight">Ubicación</h3>
                             </div>
-                            <iframe
-                                className="block h-64 w-full rounded-2xl border-0 sm:h-80"
-                                title="Ubicación de Mobelia Studio en Google Maps"
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9302.940308438529!2d-75.59903624272462!3d6.262784231454736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1784926123428!5m2!1ses-419!2sco"
-                                loading="lazy"
-                                referrerPolicy="strict-origin-when-cross-origin"
-                            />
+                            <a
+                                className="inline-flex min-h-12 items-center underline decoration-carbon-black/25 underline-offset-4 transition-colors hover:text-[#8a6533] hover:decoration-brass focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass"
+                                href="https://www.google.com/maps?q=6.262784,-75.599036"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Abrir ubicación en Google Maps
+                            </a>
                         </section>
                     </div>
                 </div>

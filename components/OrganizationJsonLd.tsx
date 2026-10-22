@@ -1,4 +1,5 @@
 import { getSiteUrl, instagramProfile, siteName } from "@/lib/seo";
+import { businessEmail, businessPhoneNational } from "@/lib/business";
 
 export default function OrganizationJsonLd() {
   const siteUrl = getSiteUrl();
@@ -13,6 +14,12 @@ export default function OrganizationJsonLd() {
         name: siteName,
         url: siteUrl.href,
         sameAs: [instagramProfile],
+        email: businessEmail,
+        telephone: `+57${businessPhoneNational}`,
+        areaServed: {
+          "@type": "City",
+          name: "Medellín, Antioquia, Colombia",
+        },
       },
       {
         "@type": "WebSite",
